@@ -2,214 +2,163 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>NovaWeb</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>GameZone</title>
 
   <style>
-    :root {
-      --primary: #2563eb;
-      --dark: #0f172a;
-      --light: #f8fafc;
-      --gray: #64748b;
-    }
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-    }
-
     body {
-      background: var(--light);
-      color: var(--dark);
-      line-height: 1.6;
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #0f172a;
+      color: white;
     }
 
-    /* NAVBAR */
     header {
-      background: white;
-      border-bottom: 1px solid #e5e7eb;
-      position: sticky;
-      top: 0;
-    }
-
-    nav {
-      max-width: 1100px;
-      margin: auto;
-      padding: 1rem;
+      background: #020617;
+      padding: 1rem 2rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
     }
 
+    header h1 {
+      color: #38bdf8;
+      margin: 0;
+    }
+
     nav a {
+      color: white;
       text-decoration: none;
-      color: var(--dark);
       margin-left: 1.5rem;
-      font-weight: 500;
+      font-weight: bold;
     }
 
-    .logo {
-      font-weight: 800;
-      font-size: 1.2rem;
-      color: var(--primary);
-    }
-
-    /* HERO */
     .hero {
-      max-width: 1100px;
-      margin: auto;
-      padding: 4rem 1rem;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 2rem;
-      align-items: center;
+      padding: 3rem 2rem;
+      text-align: center;
+      background: linear-gradient(135deg, #1e3a8a, #020617);
     }
 
-    .hero h1 {
+    .hero h2 {
       font-size: 2.5rem;
       margin-bottom: 1rem;
     }
 
-    .hero p {
-      color: var(--gray);
-      margin-bottom: 1.5rem;
-    }
-
-    .btn {
-      background: var(--primary);
-      color: white;
-      padding: 0.75rem 1.5rem;
-      border: none;
-      border-radius: 6px;
-      text-decoration: none;
-      font-weight: 600;
-    }
-
-    /* CARDS */
-    .section {
-      max-width: 1100px;
-      margin: auto;
-      padding: 3rem 1rem;
-    }
-
-    .cards {
+    .games {
+      padding: 3rem 2rem;
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
       gap: 1.5rem;
     }
 
-    .card {
-      background: white;
+    .game-card {
+      background: #020617;
+      border-radius: 10px;
       padding: 1.5rem;
-      border-radius: 10px;
-      box-shadow: 0 10px 20px rgba(0,0,0,0.05);
-    }
-
-    .card h3 {
-      margin-bottom: 0.5rem;
-    }
-
-    .card p {
-      color: var(--gray);
-    }
-
-    /* CONTACT */
-    form {
-      background: white;
-      padding: 2rem;
-      border-radius: 10px;
-      max-width: 500px;
-      margin: auto;
-      box-shadow: 0 10px 20px rgba(0,0,0,0.05);
-    }
-
-    input, textarea {
-      width: 100%;
-      padding: 0.75rem;
-      margin-bottom: 1rem;
-      border-radius: 6px;
-      border: 1px solid #e5e7eb;
-    }
-
-    /* FOOTER */
-    footer {
       text-align: center;
-      padding: 2rem;
-      color: var(--gray);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.4);
     }
 
-    @media (max-width: 768px) {
-      .hero {
-        grid-template-columns: 1fr;
-      }
+    .game-card button {
+      margin-top: 1rem;
+      padding: 0.6rem 1.2rem;
+      border: none;
+      border-radius: 6px;
+      background: #38bdf8;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .game-area {
+      padding: 3rem 2rem;
+      text-align: center;
+    }
+
+    .score {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .click-btn {
+      font-size: 1.5rem;
+      padding: 1rem 2rem;
+      background: #22c55e;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+
+    footer {
+      background: #020617;
+      text-align: center;
+      padding: 1.5rem;
+      color: #94a3b8;
     }
   </style>
 </head>
 <body>
 
-  <!-- NAV -->
+  <!-- HEADER -->
   <header>
+    <h1>GameZone</h1>
     <nav>
-      <div class="logo">NovaWeb</div>
-      <div>
-        <a href="#features">Features</a>
-        <a href="#contact">Contact</a>
-      </div>
+      <a href="#games">Games</a>
+      <a href="#play">Play</a>
     </nav>
   </header>
 
   <!-- HERO -->
   <section class="hero">
-    <div>
-      <h1>Build Modern Websites Faster</h1>
-      <p>A clean, simple website layout that actually looks professional and real.</p>
-      <a class="btn" href="#contact">Get Started</a>
-    </div>
-    <img src="https://picsum.photos/500/350" alt="Website preview" style="width:100%; border-radius:12px;">
+    <h2>Play Free Online Games</h2>
+    <p>No downloads. Just click and play.</p>
   </section>
 
-  <!-- FEATURES -->
-  <section id="features" class="section">
-    <div class="cards">
-      <div class="card">
-        <h3>⚡ Fast</h3>
-        <p>Optimized layout and lightweight design.</p>
-      </div>
-      <div class="card">
-        <h3>📱 Responsive</h3>
-        <p>Looks good on mobile, tablet, and desktop.</p>
-      </div>
-      <div class="card">
-        <h3>🎨 Clean UI</h3>
-        <p>Modern spacing, typography, and colors.</p>
-      </div>
+  <!-- GAMES LIST -->
+  <section id="games" class="games">
+    <div class="game-card">
+      <h3>Click Master</h3>
+      <p>Test your clicking speed.</p>
+      <button onclick="scrollToGame()">Play</button>
+    </div>
+
+    <div class="game-card">
+      <h3>Coming Soon</h3>
+      <p>More games added weekly.</p>
+      <button disabled>Locked</button>
+    </div>
+
+    <div class="game-card">
+      <h3>Coming Soon</h3>
+      <p>Multiplayer games soon.</p>
+      <button disabled>Locked</button>
     </div>
   </section>
 
-  <!-- CONTACT -->
-  <section id="contact" class="section">
-    <form onsubmit="handleSubmit(event)">
-      <h2>Contact Us</h2>
-      <input type="text" placeholder="Your Name" required>
-      <input type="email" placeholder="Your Email" required>
-      <textarea rows="4" placeholder="Your Message"></textarea>
-      <button class="btn" type="submit">Send Message</button>
-    </form>
+  <!-- GAME -->
+  <section id="play" class="game-area">
+    <h2>🎯 Click Master</h2>
+    <div class="score">Score: <span id="score">0</span></div>
+    <button class="click-btn" onclick="increaseScore()">CLICK ME</button>
   </section>
 
   <!-- FOOTER -->
   <footer>
-    © 2026 NovaWeb. All rights reserved.
+    © 2026 GameZone | Online Games Platform
   </footer>
 
   <script>
-    function handleSubmit(e) {
-      e.preventDefault();
-      alert("Message sent! (Demo only 😄)");
+    let score = 0;
+
+    function increaseScore() {
+      score++;
+      document.getElementById("score").textContent = score;
+    }
+
+    function scrollToGame() {
+      document.getElementById("play").scrollIntoView({ behavior: "smooth" });
     }
   </script>
 
 </body>
 </html>
+
