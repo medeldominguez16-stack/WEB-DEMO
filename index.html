@@ -1,164 +1,53 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>GameZone</title>
-
+  <title>Click the Box Game</title>
   <style>
     body {
-      margin: 0;
       font-family: Arial, sans-serif;
-      background: #0f172a;
+      text-align: center;
+      background: #111;
       color: white;
     }
 
-    header {
-      background: #020617;
-      padding: 1rem 2rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    header h1 {
-      color: #38bdf8;
-      margin: 0;
-    }
-
-    nav a {
-      color: white;
-      text-decoration: none;
-      margin-left: 1.5rem;
-      font-weight: bold;
-    }
-
-    .hero {
-      padding: 3rem 2rem;
-      text-align: center;
-      background: linear-gradient(135deg, #1e3a8a, #020617);
-    }
-
-    .hero h2 {
-      font-size: 2.5rem;
-      margin-bottom: 1rem;
-    }
-
-    .games {
-      padding: 3rem 2rem;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 1.5rem;
-    }
-
-    .game-card {
-      background: #020617;
-      border-radius: 10px;
-      padding: 1.5rem;
-      text-align: center;
-      box-shadow: 0 10px 20px rgba(0,0,0,0.4);
-    }
-
-    .game-card button {
-      margin-top: 1rem;
-      padding: 0.6rem 1.2rem;
-      border: none;
-      border-radius: 6px;
-      background: #38bdf8;
-      font-weight: bold;
+    #box {
+      width: 100px;
+      height: 100px;
+      background: red;
+      position: absolute;
       cursor: pointer;
-    }
-
-    .game-area {
-      padding: 3rem 2rem;
-      text-align: center;
-    }
-
-    .score {
-      font-size: 1.5rem;
-      margin-bottom: 1rem;
-    }
-
-    .click-btn {
-      font-size: 1.5rem;
-      padding: 1rem 2rem;
-      background: #22c55e;
-      border: none;
-      border-radius: 10px;
-      cursor: pointer;
-    }
-
-    footer {
-      background: #020617;
-      text-align: center;
-      padding: 1.5rem;
-      color: #94a3b8;
     }
   </style>
 </head>
 <body>
 
-  <!-- HEADER -->
-  <header>
-    <h1>GameZone</h1>
-    <nav>
-      <a href="#games">Games</a>
-      <a href="#play">Play</a>
-    </nav>
-  </header>
+  <h1>Click the Box!</h1>
+  <p>Score: <span id="score">0</span></p>
 
-  <!-- HERO -->
-  <section class="hero">
-    <h2>Play Free Online Games</h2>
-    <p>No downloads. Just click and play.</p>
-  </section>
-
-  <!-- GAMES LIST -->
-  <section id="games" class="games">
-    <div class="game-card">
-      <h3>Click Master</h3>
-      <p>Test your clicking speed.</p>
-      <button onclick="scrollToGame()">Play</button>
-    </div>
-
-    <div class="game-card">
-      <h3>Coming Soon</h3>
-      <p>More games added weekly.</p>
-      <button disabled>Locked</button>
-    </div>
-
-    <div class="game-card">
-      <h3>Coming Soon</h3>
-      <p>Multiplayer games soon.</p>
-      <button disabled>Locked</button>
-    </div>
-  </section>
-
-  <!-- GAME -->
-  <section id="play" class="game-area">
-    <h2>🎯 Click Master</h2>
-    <div class="score">Score: <span id="score">0</span></div>
-    <button class="click-btn" onclick="increaseScore()">CLICK ME</button>
-  </section>
-
-  <!-- FOOTER -->
-  <footer>
-    © 2026 GameZone | Online Games Platform
-  </footer>
+  <div id="box"></div>
 
   <script>
     let score = 0;
+    const box = document.getElementById("box");
+    const scoreText = document.getElementById("score");
 
-    function increaseScore() {
+    function moveBox() {
+      const x = Math.random() * (window.innerWidth - 100);
+      const y = Math.random() * (window.innerHeight - 100);
+      box.style.left = x + "px";
+      box.style.top = y + "px";
+    }
+
+    box.onclick = function () {
       score++;
-      document.getElementById("score").textContent = score;
-    }
+      scoreText.textContent = score;
+      moveBox();
+    };
 
-    function scrollToGame() {
-      document.getElementById("play").scrollIntoView({ behavior: "smooth" });
-    }
+    moveBox();
   </script>
 
 </body>
 </html>
+
 
